@@ -1,32 +1,63 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #333;
-    color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: #fff;
+  position: relative; /* For absolute positioning of mobile menu */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Link styles */
+.navLinks a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Hamburger menu toggler (hidden on larger screens) */
+.menuToggler {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .menuToggler {
+    display: block;
   }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
+
+  /* Initially hide navigation links on mobile */
   .navLinks {
-    list-style: none;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background-color: #333;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  /* Show navigation links when mobile menu is open */
+  .mobileMenuOpen {
     display: flex;
-    gap: 1.5rem;
   }
-  
-  .navLinks a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  
-  @media (max-width: 768px) {
-    .navLinks {
-      display: none; /* Hide on mobile */
-    }
-  }
-  
+}
